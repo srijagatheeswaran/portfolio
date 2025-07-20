@@ -30,6 +30,9 @@ function App() {
     message: '',
   });
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const serviceID = import.meta.env.VITE_EMAIL_SERVICE_ID;
+  const templateID = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
 
   const skills = [
     { name: 'HTML', icon: '🌐' },
@@ -177,14 +180,14 @@ function App() {
     setLoading(true);
     emailjs
       .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceID,
+        templateID,
         {
           name: formData.name,
           email: formData.email,
           message: formData.message,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+        publicKey)
       .then(() => {
         setToast({ type: 'success', message: 'Your message has been sent successfully!' });
         setFormData({ name: '', email: '', message: '' });
