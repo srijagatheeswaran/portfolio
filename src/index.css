@@ -1,0 +1,390 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark theme base styles */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #111827;
+    color: #ffffff;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(240deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #7c3aed);
+}
+
+/* Focus styles for dark theme */
+.focus-visible:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Form enhancements for dark theme */
+input:focus,
+textarea:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+/* Card hover effects */
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Button hover effects */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+#projects{
+  overflow-x: hidden !important;
+}
+.slider_box{
+  overflow-x: hidden !important;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Loading animation */
+.loading {
+  animation: pulse 2s infinite;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon glow effects */
+.neon-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.neon-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+/* Text glow */
+.text-glow {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Particle animation */
+@keyframes particle-float {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.particle {
+  animation: particle-float 8s linear infinite;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 2.5rem;
+  }
+  
+  .section-padding {
+    padding: 3rem 1rem;
+  }
+  
+  /* Reduce motion for mobile */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-fadeInUp,
+    .animate-fadeIn {
+      animation: none;
+    }
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-gray-800 {
+    background-color: #000000;
+  }
+  
+  .text-gray-400 {
+    color: #ffffff;
+  }
+  
+  .border-gray-700 {
+    border-color: #ffffff;
+  }
+}
+
+/* Dark mode specific improvements */
+@media (prefers-color-scheme: dark) {
+  .bg-white {
+    background-color: #111827;
+  }
+}
+
+/* Custom utilities */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.backdrop-blur-strong {
+  backdrop-filter: blur(20px);
+}
+
+/* Improved focus indicators */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Enhanced transitions */
+.transition-all-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Improved hover states */
+.hover-lift:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Swiper Custom Styles */
+.projects-swiper {
+  padding-bottom: 50px !important;
+  overflow: visible;
+}
+
+.projects-swiper .swiper-slide {
+  height: auto;
+}
+
+/* Custom Pagination Bullets */
+.swiper-pagination-bullet-custom {
+  width: 12px;
+  height: 12px;
+  background: rgba(75, 85, 99, 0.5);
+  border-radius: 50%;
+  opacity: 1;
+  margin: 0 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.swiper-pagination-bullet-active-custom {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.swiper-pagination-bullet-custom:hover {
+  background: rgba(59, 130, 246, 0.7);
+  transform: scale(1.1);
+}
+
+/* Hide default Swiper buttons */
+.projects-swiper .swiper-button-next,
+.projects-swiper .swiper-button-prev {
+  display: none;
+}
+
+/* Custom navigation button hover effects */
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* Mobile responsiveness for navigation */
+@media (max-width: 768px) {
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    /* width: 30px;
+    height: 30px; */
+    display: none;
+  }
+  
+  .swiper-button-prev-custom {
+    left: 2px;
+  }
+  
+  .swiper-button-next-custom {
+    right: 2px;
+  }
+}
+
+/* Swiper pagination positioning */
+.projects-swiper .swiper-pagination {
+  bottom: 10px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Enhanced slide animations */
+.projects-swiper .swiper-slide-active {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.projects-swiper .swiper-slide {
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 425px){
+ .text-5xl{
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 375px){
+  .profile-img{
+    width: 90%;
+  }
+ 
+}
