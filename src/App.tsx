@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Toast from "./component/Toast";
-import profileImage from "./assets/profile.png";
+import profileImage from "./assets/profile.jpg";
 import {
   Home, User, Code, FolderOpen, Mail, ArrowUp,
   Download, ExternalLink, Github, Linkedin, Phone,
