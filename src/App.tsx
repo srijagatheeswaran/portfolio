@@ -427,14 +427,14 @@ function App() {
                     <p className="text-blue-400 text-sm">Jan 2025 - Present</p>
                   </div>
 
-                  <div className="bg-gray-800/50 p-4 rounded-xl border border-gray-700">
+                  <a className="bg-gray-800/50 p-4 rounded-xl border border-gray-700" href='#projects'>
                     <div className="flex items-center gap-3 mb-2">
                       <Globe className="w-5 h-5 text-green-400" />
                       <span className="text-white font-medium">Projects</span>
                     </div>
-                    <p className="text-gray-400 text-sm">5+ Completed</p>
+                    <p className="text-gray-400 text-sm">3+ Completed</p>
                     <p className="text-green-400 text-sm">Full Stack Apps</p>
-                  </div>
+                  </a>
                 </div>
               </div>
 
