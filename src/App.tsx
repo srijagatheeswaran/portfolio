@@ -323,7 +323,7 @@ function App() {
                   Aspiring Full Stack Web Developer
                 </p>
                 <p className="text-lg sm:text-xl text-blue-400 font-medium">
-                  Backend Developer
+                  Junior PHP Developer
                 </p>
               </div>
             </div>
