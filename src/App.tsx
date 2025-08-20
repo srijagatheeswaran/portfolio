@@ -402,7 +402,7 @@ function App() {
                   <img
                     src={profileImage}
                     alt="Profile"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-cover object-top rounded-2xl"
                   />
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                     <div className="w-3 h-3 bg-white rounded-full"></div>
