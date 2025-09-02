@@ -320,10 +320,10 @@ function App() {
 
               <div className="space-y-2">
                 <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light">
-                  Aspiring Full Stack Web Developer
+                   Full Stack Web Developer
                 </p>
                 <p className="text-lg sm:text-xl text-blue-400 font-medium">
-                  Junior PHP Developer
+                   PHP Developer
                 </p>
               </div>
             </div>
@@ -414,7 +414,7 @@ function App() {
             <div className="space-y-8">
               <div className="space-y-6">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  I am <span className="text-blue-400 font-semibold">R. Srijagatheeswaran</span>, an aspiring Full Stack Web Developer skilled in React, PHP (Laravel), and backend technologies. Passionate about building secure and scalable applications, currently working as <span className="text-purple-400 font-semibold">PHP (Laravel) & Backend Developer</span> since Jan 2025.
+                  I am <span className="text-blue-400 font-semibold">R. Srijagatheeswaran</span>, an Full Stack Web Developer skilled in React, PHP (Laravel), and backend technologies. Passionate about building secure and scalable applications, currently working as <span className="text-purple-400 font-semibold">PHP (Laravel) & Backend Developer</span> since Jan 2025.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4">
