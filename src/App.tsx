@@ -322,9 +322,9 @@ function App() {
                 <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light">
                    Full Stack Web Developer
                 </p>
-                <p className="text-lg sm:text-xl text-blue-400 font-medium">
+                {/* <p className="text-lg sm:text-xl text-blue-400 font-medium">
                    PHP Developer
-                </p>
+                </p> */}
               </div>
             </div>
 
@@ -740,7 +740,9 @@ function App() {
                 R. Srijagatheeswaran
               </span>
             </h3>
-            <p className="text-gray-400 mb-6">Full Stack Web Developer | Backend Developer</p>
+            <p className="text-gray-400 mb-6">Full Stack Web Developer 
+              {/* | Backend Developer */}
+              </p>
 
             <div className="flex justify-center gap-6 mb-8">
               <a
