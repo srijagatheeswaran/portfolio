@@ -46,11 +46,24 @@ function App() {
     { name: 'MongoDB', icon: '🍃' },
     { name: 'Redis', icon: '🔴' },
     { name: 'Python', icon: '🐍' },
-    { name: 'Bootstrap', icon: '💜' }
+    { name: 'Bootstrap', icon: '💜' },
+    { name: 'RAG', icon: '🤖' },
+    { name: 'Vector DB', icon: '📦' }
+
   ];
 
   const projects = [
 
+    {
+      title: 'Doc Reader RAG!',
+      description: 'Developed a Python-based document Q&A app using Groq, SentenceTransformers, FAISS, and Vector DB for Retrieval-Augmented Generation (RAG) from PDF, DOCX, and TXT files.',
+      tech: ['Python', 'RAG', 'Groq', 'SentenceTransformers', 'FAISS', 'Vector DB'],
+      liveLink: 'https://huggingface.co/spaces/Srijagatheeswaran/doc-reader-rag',
+      githubLink: 'https://github.com/srijagatheeswaran/doc-reader-rag',
+      image: 'https://images.pexels.com/photos/6334780/pexels-photo-6334780.jpeg',
+      featured: false,
+      new:true
+    },
     {
       title: 'Employee Attendance Management',
       description: 'Advanced attendance tracking system using facial recognition technology with real-time monitoring and analytics dashboard.',
@@ -305,7 +318,7 @@ function App() {
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           <div className="space-y-8 animate-fadeInUp">
             {/* Main heading */}
-            <div className="space-y-4">
+            <div className="space-y-4 mt-20">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-6">
                 <Star className="w-4 h-4" />
                 Available for new opportunities
@@ -320,7 +333,7 @@ function App() {
 
               <div className="space-y-2">
                 <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light">
-                   Full Stack Web Developer
+                  Full Stack Web Developer
                 </p>
                 {/* <p className="text-lg sm:text-xl text-blue-400 font-medium">
                    PHP Developer
@@ -548,6 +561,11 @@ function App() {
                           Featured
                         </div>
                       )}
+                      {project.new && (
+                        <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                          New
+                        </div>
+                      )}
                     </div>
 
                     <div className="p-6">
@@ -740,9 +758,9 @@ function App() {
                 R. Srijagatheeswaran
               </span>
             </h3>
-            <p className="text-gray-400 mb-6">Full Stack Web Developer 
+            <p className="text-gray-400 mb-6">Full Stack Web Developer
               {/* | Backend Developer */}
-              </p>
+            </p>
 
             <div className="flex justify-center gap-6 mb-8">
               <a
