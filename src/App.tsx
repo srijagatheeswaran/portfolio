@@ -370,7 +370,7 @@ function App() {
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center gap-6 pt-8">
+            <div className="flex justify-center gap-6 pt-3 pb-2">
               <a
                 href="https://github.com/srijagatheeswaran"
                 target='_blank'
@@ -427,7 +427,7 @@ function App() {
             <div className="space-y-8">
               <div className="space-y-6">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  I am <span className="text-blue-400 font-semibold">R. Srijagatheeswaran</span>, an Full Stack Web Developer skilled in React, PHP (Laravel), and backend technologies. Passionate about building secure and scalable applications, currently working as <span className="text-purple-400 font-semibold">PHP (Laravel) & Backend Developer</span> since Jan 2025.
+                  Hi, I’m <span className="text-blue-400 font-semibold">R. Srijagatheeswaran</span>, a full stack web developer skilled in the MERN stack, PHP Laravel, and Python Flask. I have 9 months of experience as a PHP developer at DCI in Madurai, and I’m passionate about creating scalable and secure web applications while continuously improving my technical skills.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -437,7 +437,7 @@ function App() {
                       <span className="text-white font-medium">Experience</span>
                     </div>
                     <p className="text-gray-400 text-sm">Backend Developer</p>
-                    <p className="text-blue-400 text-sm">Jan 2025 - Present</p>
+                    <p className="text-blue-400 text-sm">Jan 2025 - Sep 2025</p>
                   </div>
 
                   <a className="bg-gray-800/50 p-4 rounded-xl border border-gray-700" href='#projects'>
