@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Toast from "./component/Toast";
+import ChatbotWidget from "./component/ChatbotWidget";
 import profileImage from "./assets/profile.jpg";
 import {
   Home, User, Code, FolderOpen, Mail, ArrowUp,
@@ -62,7 +63,7 @@ function App() {
       githubLink: 'https://github.com/srijagatheeswaran/doc-reader-rag',
       image: 'https://images.pexels.com/photos/6334780/pexels-photo-6334780.jpeg',
       featured: false,
-      new:true
+      new: true
     },
     {
       title: 'Employee Attendance Management',
@@ -792,11 +793,12 @@ function App() {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 z-50 hover:scale-110"
+          className="fixed bottom-28 right-7 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 z-50 hover:scale-110"
         >
           <ArrowUp className="w-6 h-6" />
         </button>
       )}
+
       {toast && (
         <Toast
           message={toast.message}
@@ -804,6 +806,10 @@ function App() {
           onClose={() => setToast(null)}
         />
       )}
+      <div className="relative">
+
+        <ChatbotWidget />
+      </div>
     </div>
 
   );
