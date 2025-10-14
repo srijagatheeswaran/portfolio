@@ -167,7 +167,10 @@ textarea:focus {
 .loading {
   animation: pulse 2s infinite;
 }
-
+.nav button{
+  outline: none !important;
+  border: none !important;
+}
 /* Glassmorphism effect */
 .glass {
   background: rgba(255, 255, 255, 0.05);

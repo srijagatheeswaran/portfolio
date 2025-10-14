@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 import Toast from "./component/Toast";
 import ChatbotWidget from "./component/ChatbotWidget";
 import profileImage from "./assets/profile.jpg";
+import './index.css';
 import {
   Home, User, Code, FolderOpen, Mail, ArrowUp,
   Download, ExternalLink, Github, Linkedin, Phone,
@@ -36,21 +37,20 @@ function App() {
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const skills = [
-    { name: 'HTML', icon: '🌐' },
-    { name: 'CSS', icon: '🎨' },
-    { name: 'JavaScript', icon: '⚡' },
+    // { name: 'HTML', icon: '🌐' },
+    // { name: 'CSS', icon: '🎨' },
+    // { name: 'JavaScript', icon: '⚡' },
+    { name: 'Python', icon: '🐍' },
+    { name: 'RAG', icon: '🤖' },
     { name: 'React.js', icon: '⚛️' },
-    { name: 'PHP (Laravel)', icon: '🐘' },
     { name: 'Node.js', icon: '🟢' },
     { name: 'Express.js', icon: '🚀' },
+    { name: 'PHP (Laravel)', icon: '🐘' },
+    { name: 'Vector DB', icon: '📦' },
     { name: 'MySQL', icon: '🗄️' },
     { name: 'MongoDB', icon: '🍃' },
     { name: 'Redis', icon: '🔴' },
-    { name: 'Python', icon: '🐍' },
-    { name: 'Bootstrap', icon: '💜' },
-    { name: 'RAG', icon: '🤖' },
-    { name: 'Vector DB', icon: '📦' }
-
+    { name: 'Bootstrap', icon: '💜' }
   ];
 
   const projects = [
@@ -228,7 +228,7 @@ function App() {
 
             {/* Desktop Menu */}
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
+              <div className="ml-10 flex items-baseline space-x-8 nav">
                 {[
                   { id: 'home', label: 'Home', icon: Home },
                   { id: 'about', label: 'About', icon: User },
@@ -334,7 +334,7 @@ function App() {
 
               <div className="space-y-2">
                 <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light">
-                  Full Stack Web Developer
+                  Full Stack Web Developer & Freelancer
                 </p>
                 {/* <p className="text-lg sm:text-xl text-blue-400 font-medium">
                    PHP Developer
@@ -441,7 +441,7 @@ function App() {
                     <p className="text-blue-400 text-sm">Jan 2025 - Sep 2025</p>
                   </div>
 
-                  <a className="bg-gray-800/50 p-4 rounded-xl border border-gray-700" href='#projects'>
+                  <a className="bg-gray-800/50 p-4 rounded-xl border border-gray-700" onClick={() => scrollToSection('projects')}>
                     <div className="flex items-center gap-3 mb-2">
                       <Globe className="w-5 h-5 text-green-400" />
                       <span className="text-white font-medium">Projects</span>
