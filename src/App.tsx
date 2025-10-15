@@ -90,8 +90,8 @@ function App() {
     },
     {
       title: 'Dreamscape Studio!',
-      description: 'Advanced attendance tracking system using facial recognition technology with real-time monitoring and analytics dashboard.',
-      tech: ['React', 'AWS Rekognition', 'Python', 'MongoDB'],
+      description: 'Portfolio site for Dreamscape Studio ',
+      tech: ['React', 'Tailwind CSS','EmailJS'],
       liveLink: 'https://dreamscape-studio.netlify.app/',
       githubLink: 'https://github.com/srijagatheeswaran/Dreamseape-client',
       image: projImg,
