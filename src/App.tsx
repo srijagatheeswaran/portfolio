@@ -8,6 +8,7 @@ import Toast from "./component/Toast";
 import ChatbotWidget from "./component/ChatbotWidget";
 import profileImage from "./assets/profile.jpg";
 import './index.css';
+import projImg from "./assets/projectImage.png";
 import {
   Home, User, Code, FolderOpen, Mail, ArrowUp,
   Download, ExternalLink, Github, Linkedin, Phone,
@@ -36,6 +37,7 @@ function App() {
   const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+
   const skills = [
     // { name: 'HTML', icon: '🌐' },
     // { name: 'CSS', icon: '🎨' },
@@ -63,7 +65,8 @@ function App() {
       githubLink: 'https://github.com/srijagatheeswaran/doc-reader-rag',
       image: 'https://images.pexels.com/photos/6334780/pexels-photo-6334780.jpeg',
       featured: false,
-      new: true
+      new: true,
+      type: 'ai'
     },
     {
       title: 'Employee Attendance Management',
@@ -72,7 +75,8 @@ function App() {
       liveLink: 'https://employee-management-jaga.netlify.app/profile',
       githubLink: 'https://github.com/srijagatheeswaran/Employee_Mangement_Frontend.git',
       image: 'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800',
-      featured: true
+      featured: true,
+      type: 'full-stock'
     },
     {
       title: 'Social Media Web App',
@@ -81,8 +85,40 @@ function App() {
       liveLink: 'https://demo-socailmedia.netlify.app/',
       githubLink: 'https://github.com/srijagatheeswaran/social-media-client.git',
       image: 'https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=800',
-      featured: true
+      featured: true,
+      type: 'full-stock'
     },
+    {
+      title: 'Dreamscape Studio!',
+      description: 'Advanced attendance tracking system using facial recognition technology with real-time monitoring and analytics dashboard.',
+      tech: ['React', 'AWS Rekognition', 'Python', 'MongoDB'],
+      liveLink: 'https://dreamscape-studio.netlify.app/',
+      githubLink: 'https://github.com/srijagatheeswaran/Dreamseape-client',
+      image: projImg,
+      featured: true,
+      type: 'freelance'
+    },
+    {
+      title: 'Employee management and empowerment for admins.',
+      description: 'Admins can efficiently manage employee data through an intuitive interface. username : admin, password : admin, (or) username : admin1, password : admin',
+      tech: ['React', 'Node.js', 'Express', 'MongoDB'],
+      liveLink: 'https://employee-data-admin.netlify.app/',
+      githubLink: 'https://github.com/srijagatheeswaran/DEALSDRAY-ONLINE-PVT-LTD-Task_client',
+      image: 'https://img.freepik.com/free-vector/illustration-with-multitasking-design_23-2148415704.jpg',
+      featured: false,
+      type: 'full-stock'
+    },
+    {
+      title: 'Weather Dashboard',
+      description: 'Interactive weather application with location-based forecasts, charts, and weather alerts.',
+      tech: ['HTML', 'CSS', 'JS', 'Weather API'],
+      liveLink: 'https://srijagatheeswaran.github.io/weather-checker-2.0/',
+      githubLink: 'https://github.com/srijagatheeswaran/weather-checker-2.0',
+      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
+      featured: false,
+      type: 'defult'
+    },
+
     {
       title: 'Core PHP Signup Page',
       description: 'Secure user registration system with advanced caching, email verification, and robust security features.',
@@ -90,7 +126,18 @@ function App() {
       liveLink: 'https://core-php-login.onrender.com/',
       githubLink: 'https://github.com/srijagatheeswaran/php-core',
       image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800',
-      featured: false
+      featured: false,
+      type: 'defult'
+    },
+    {
+      title: 'ToDo List App',
+      description: 'A simple and responsive To-Do List app built with HTML, CSS, and JavaScript, allowing users to add, edit, and delete tasks with a clean UI',
+      tech: ['HTML', 'CSS', 'JS'],
+      liveLink: 'https://srijagatheeswaran.github.io/Todo-list/',
+      githubLink: 'https://github.com/srijagatheeswaran/To-Do-Web_application_jQuery-',
+      image: 'https://images.unsplash.com/photo-1598791318878-10e76d178023?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      featured: false,
+      type: 'defult'
     },
     // {
     //   title: 'E-Commerce Platform',
@@ -101,35 +148,29 @@ function App() {
     //   image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
     //   featured: false
     // },
-    {
-      title: 'Employee management and empowerment for admins.',
-      description: 'Admins can efficiently manage employee data through an intuitive interface. username : admin, password : admin, (or) username : admin1, password : admin',
-      tech: ['React', 'Node.js', 'Express', 'MongoDB'],
-      liveLink: 'https://employee-data-admin.netlify.app/',
-      githubLink: 'https://github.com/srijagatheeswaran/DEALSDRAY-ONLINE-PVT-LTD-Task_client',
-      image: 'https://img.freepik.com/free-vector/illustration-with-multitasking-design_23-2148415704.jpg',
-      featured: false
-    },
-    {
-      title: 'Weather Dashboard',
-      description: 'Interactive weather application with location-based forecasts, charts, and weather alerts.',
-      tech: ['HTML', 'CSS', 'JS', 'Weather API'],
-      liveLink: 'https://srijagatheeswaran.github.io/weather-checker-2.0/',
-      githubLink: 'https://github.com/srijagatheeswaran/weather-checker-2.0',
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
-      featured: false
-    },
-    {
-      title: 'ToDo List App',
-      description: 'A simple and responsive To-Do List app built with HTML, CSS, and JavaScript, allowing users to add, edit, and delete tasks with a clean UI',
-      tech: ['HTML', 'CSS', 'JS'],
-      liveLink: 'https://srijagatheeswaran.github.io/Todo-list/',
-      githubLink: 'https://github.com/srijagatheeswaran/To-Do-Web_application_jQuery-',
-      image: 'https://images.unsplash.com/photo-1598791318878-10e76d178023?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      featured: false
-    },
+
 
   ];
+  const projectsType = [
+    {
+      name: 'All', id: 'all'
+    },
+    {
+      name: 'Full Stock', id: 'full-stock'
+    },
+    {
+      name: 'Freelance', id: 'freelance'
+    },
+    {
+      name: 'AI', id: 'ai'
+    }
+  ];
+  const [activeTab, setActiveTab] = useState(projectsType[0]?.id);
+
+  const filteredProjects =
+    activeTab === "all"
+      ? projects
+      : projects.filter((project) => project.type === activeTab);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -511,6 +552,20 @@ function App() {
               A showcase of my recent work and technical expertise
             </p>
           </div>
+          <div className="flex justify-center space-x-4 border-b border-gray-700 mb-6">
+            {projectsType.map((type) => (
+              <button
+                key={type.id}
+                onClick={() => setActiveTab(type.id)}
+                className={`px-4 py-2 rounded-t-xl transition-all duration-200 ${activeTab === type.id
+                    ? "border-b-2 border-blue-500 text-blue-500 font-semibold"
+                    : "text-gray-400 hover:text-blue-400"
+                  }`}
+              >
+                {type.name}
+              </button>
+            ))}
+          </div>
 
           <div className="relative slider_box">
             <Swiper
@@ -530,7 +585,7 @@ function App() {
               //   delay: 5000,
               //   disableOnInteraction: false,
               // }}
-              loop={true}
+              // loop={true}
               breakpoints={{
                 640: {
                   slidesPerView: 1,
@@ -547,9 +602,10 @@ function App() {
               }}
               className="projects-swiper"
             >
-              {projects.map((project, index) => (
+
+              {filteredProjects.map((project, index) => (
                 <SwiperSlide key={index}>
-                  <div className="group bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 h-full">
+                  <div className="group bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300  h-full">
                     <div className="relative h-48 overflow-hidden">
                       <img
                         src={project.image}
@@ -615,12 +671,12 @@ function App() {
             </Swiper>
 
             {/* Custom Navigation Buttons */}
-            <div className="swiper-button-prev-custom absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-gray-800/80 hover:bg-blue-600 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 group backdrop-blur-sm border border-gray-700 hover:border-blue-500">
+            {/* <div className="swiper-button-prev-custom absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-gray-800/80 hover:bg-blue-600 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 group backdrop-blur-sm border border-gray-700 hover:border-blue-500">
               <ChevronLeft className="w-6 h-6 text-gray-300 group-hover:text-white" />
             </div>
             <div className="swiper-button-next-custom absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-gray-800/80 hover:bg-blue-600 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 group backdrop-blur-sm border border-gray-700 hover:border-blue-500">
               <ChevronRight className="w-6 h-6 text-gray-300 group-hover:text-white" />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

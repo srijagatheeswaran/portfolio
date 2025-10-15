@@ -150,6 +150,9 @@ textarea:focus {
 .slider_box{
   overflow-x: hidden !important;
 }
+.projects-swiper .swiper-slide-active {
+  transform: unset !important;
+}
 
 @keyframes gradient-shift {
   0% {
