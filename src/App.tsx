@@ -156,7 +156,7 @@ function App() {
       name: 'All', id: 'all'
     },
     {
-      name: 'Full Stock', id: 'full-stock'
+      name: 'Full Stack', id: 'full-stack'
     },
     {
       name: 'Freelance', id: 'freelance'
