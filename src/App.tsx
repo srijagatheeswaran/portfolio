@@ -91,7 +91,7 @@ function App() {
     {
       title: 'Dreamscape Studio!',
       description: 'Portfolio site for Dreamscape Studio ',
-      tech: ['React', 'Tailwind CSS','EmailJS'],
+      tech: ['React', 'Tailwind CSS', 'EmailJS'],
       liveLink: 'https://dreamscape-studio.netlify.app/',
       githubLink: 'https://github.com/srijagatheeswaran/Dreamseape-client',
       image: projImg,
@@ -469,7 +469,14 @@ function App() {
             <div className="space-y-8">
               <div className="space-y-6">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Hi, I’m <span className="text-blue-400 font-semibold">R. Srijagatheeswaran</span>, a full stack web developer skilled in the MERN stack, PHP Laravel, and Python Flask. I have 9 months of experience as a PHP developer at DCI in Madurai, and I’m passionate about creating scalable and secure web applications while continuously improving my technical skills.
+                  Hi, I’m <span className="text-blue-400 font-semibold">R. Srijagatheeswaran</span>, a Full Stack Developer with proven
+                  experience in MERN, PHP (Laravel), and
+                  Python (Flask). Contributed to the
+                  development of scalable, secure web
+                  applications and REST APIs at Dot Com
+                  Infoway (DCI). Committed to writing
+                  clean, efficient code and delivering
+                  optimized, user-focused digital solutions.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -558,8 +565,8 @@ function App() {
                 key={type.id}
                 onClick={() => setActiveTab(type.id)}
                 className={`px-4 py-2 rounded-t-xl transition-all duration-200 ${activeTab === type.id
-                    ? "border-b-2 border-blue-500 text-blue-500 font-semibold"
-                    : "text-gray-400 hover:text-blue-400"
+                  ? "border-b-2 border-blue-500 text-blue-500 font-semibold"
+                  : "text-gray-400 hover:text-blue-400"
                   }`}
               >
                 {type.name}
