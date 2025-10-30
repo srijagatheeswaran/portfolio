@@ -76,7 +76,7 @@ function App() {
       githubLink: 'https://github.com/srijagatheeswaran/Employee_Mangement_Frontend.git',
       image: 'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800',
       featured: true,
-      type: 'full-stock'
+      type: 'full-stack'
     },
     {
       title: 'Social Media Web App',
@@ -86,7 +86,7 @@ function App() {
       githubLink: 'https://github.com/srijagatheeswaran/social-media-client.git',
       image: 'https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=800',
       featured: true,
-      type: 'full-stock'
+      type: 'full-stack'
     },
     {
       title: 'Dreamscape Studio!',
@@ -106,7 +106,7 @@ function App() {
       githubLink: 'https://github.com/srijagatheeswaran/DEALSDRAY-ONLINE-PVT-LTD-Task_client',
       image: 'https://img.freepik.com/free-vector/illustration-with-multitasking-design_23-2148415704.jpg',
       featured: false,
-      type: 'full-stock'
+      type: 'full-stack'
     },
     {
       title: 'Weather Dashboard',
