@@ -428,20 +428,8 @@ function App() {
 
 
                 <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light">
-                  {/* Full Stack */}
-                  <RotatingText
-                    texts={['Full Stack', 'Backend', 'Frontend']}
-                    mainClassName="px-2 text-light  !inline-block"
-
-                    staggerFrom={"last"}
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    exit={{ y: "-120%" }}
-                    staggerDuration={0.025}
-                    splitLevelClassName="overflow-hidden  sm:pb-1 md:pb-1"
-                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                    rotationInterval={4000}
-                  />
+                  Full Stack
+                  
                   Web Developer & Freelancer
                 </p>
                 {/* <p className="text-lg sm:text-xl text-blue-400 font-medium">
@@ -452,7 +440,22 @@ function App() {
 
             {/* Tagline */}
             <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              "Passionate about building dynamic and scalable web applications that make a difference."
+              "Passionate about building 
+              {/* dynamic and scalable  */}
+              <RotatingText
+                    texts={[' dynamic ', ' scalable ',' secured ']}
+                    mainClassName=" text-light  !inline-block"
+
+                    staggerFrom={"last"}
+                    initial={{ y: "100%" }}
+                    animate={{ y: 0 }}
+                    exit={{ y: "-120%" }}
+                    staggerDuration={0.025}
+                    splitLevelClassName="overflow-hidden  sm:pb-1 md:pb-1"
+                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                    rotationInterval={4000}
+                  />
+              web applications that make a difference."
             </p>
 
             {/* CTA Buttons */}
