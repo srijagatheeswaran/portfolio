@@ -15,6 +15,10 @@ import {
   Menu, X, Star, Zap, Globe, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import emailjs from "emailjs-com";
+import LightRays from './components/LightRays';
+import GooeyNav from './components/GooeyNav';
+import RotatingText from './components/RotatingText'
+import MagicBento from './components/MagicBento'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -254,11 +258,25 @@ function App() {
         setLoading(false);
       });
   };
-
+  // const items = [
+  //   { id: 'home', label: 'Home', icon: Home },
+  //   { id: 'about', label: 'About', icon: User },
+  //   { id: 'skills', label: 'Skills', icon: Code },
+  //   { id: 'projects', label: 'Projects', icon: FolderOpen },
+  //   { id: 'contact', label: 'Contact', icon: Mail }
+  // ];
+  const items = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" }
+  ];
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-md z-50 border-b border-gray-800">
+      <nav className="fixed top-0 left-0 right-0  backdrop-blur-md z-50 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
@@ -268,6 +286,7 @@ function App() {
             </div>
 
             {/* Desktop Menu */}
+
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8 nav">
                 {[
@@ -291,6 +310,24 @@ function App() {
                 ))}
               </div>
             </div>
+            {/* <div className="hidden md:block relative">
+              <div className="absolute inset-0 pointer-events-none bg-transparent"></div>
+              <GooeyNav
+                style={{ background: "transparent" }}
+                className="!bg-transparent"
+                items={items}
+                particleCount={15}
+                particleDistances={[90, 10]}
+                particleR={100}
+                initialActiveIndex={0}
+                animationTime={600}
+                timeVariance={300}
+                colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+                onSelect={(item) => scrollToSection(item.id)}
+              />
+
+            </div> */}
+
 
             {/* Mobile menu button */}
             <div className="md:hidden">
@@ -337,7 +374,20 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20"></div>
-          <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-10"></div>
+          {/* <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-10"></div> */}
+          <div className="relative w-full h-[900px]">
+            <LightRays
+              raysOrigin="top-center"
+              raysColor="#00ffff"
+              raysSpeed={isMobile ? 0.5 : 1.5}
+              lightSpread={0.7}
+              rayLength={isMobile ? 5.0 : 1.0}
+              followMouse={!isMobile}
+              mouseInfluence={0.05}
+              noiseAmount={0.05}
+              distortion={0.03}
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-gray-900/50"></div>
         </div>
 
@@ -357,6 +407,7 @@ function App() {
           ))}
         </div>
 
+
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           <div className="space-y-8 animate-fadeInUp">
             {/* Main heading */}
@@ -374,8 +425,24 @@ function App() {
               </h1>
 
               <div className="space-y-2">
+
+
                 <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light">
-                  Full Stack Web Developer & Freelancer
+                  {/* Full Stack */}
+                  <RotatingText
+                    texts={['Full Stack', 'Backend', 'Frontend']}
+                    mainClassName="px-2 text-light  !inline-block"
+
+                    staggerFrom={"last"}
+                    initial={{ y: "100%" }}
+                    animate={{ y: 0 }}
+                    exit={{ y: "-120%" }}
+                    staggerDuration={0.025}
+                    splitLevelClassName="overflow-hidden  sm:pb-1 md:pb-1"
+                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                    rotationInterval={5000}
+                  />
+                  Web Developer & Freelancer
                 </p>
                 {/* <p className="text-lg sm:text-xl text-blue-400 font-medium">
                    PHP Developer
@@ -448,8 +515,8 @@ function App() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
           </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+         
+          <div className="grid lg:grid-cols-2 gap-12 items-center ">
             <div className="space-y-6">
               <div className="relative">
                 <div className="w-80 h-80 profile-img bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl mx-auto flex items-center justify-center backdrop-blur-sm border border-gray-700">
@@ -479,7 +546,7 @@ function App() {
                   optimized, user-focused digital solutions.
                 </p>
 
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-4 ">
                   <div className="bg-gray-800/50 p-4 rounded-xl border border-gray-700">
                     <div className="flex items-center gap-3 mb-2">
                       <Zap className="w-5 h-5 text-yellow-400" />
