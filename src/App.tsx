@@ -15,6 +15,8 @@ import {
   Menu, X, Star, Zap, Globe, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 import LightRays from './components/LightRays';
 import GooeyNav from './components/GooeyNav';
 import RotatingText from './components/RotatingText'
@@ -29,6 +31,7 @@ function App() {
     email: '',
     message: ''
   });
+  const [isPaused, setIsPaused] = useState(false);
   const [loading, setLoading] = useState(false);
   // const [success, setSuccess] = useState<string | null>(null);
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
@@ -429,7 +432,7 @@ function App() {
 
                 <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light">
                   Full Stack
-                  
+
                   Web Developer & Freelancer
                 </p>
                 {/* <p className="text-lg sm:text-xl text-blue-400 font-medium">
@@ -440,21 +443,21 @@ function App() {
 
             {/* Tagline */}
             <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              "Passionate about building 
+              "Passionate about building
               {/* dynamic and scalable  */}
               <RotatingText
-                    texts={[' dynamic ', ' scalable ',' secured ']}
-                    mainClassName=" text-light  !inline-block"
+                texts={[' dynamic ', ' scalable ', ' secured ']}
+                mainClassName=" text-light  !inline-block"
 
-                    staggerFrom={"last"}
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    exit={{ y: "-120%" }}
-                    staggerDuration={0.025}
-                    splitLevelClassName="overflow-hidden  sm:pb-1 md:pb-1"
-                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                    rotationInterval={4000}
-                  />
+                staggerFrom={"last"}
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.025}
+                splitLevelClassName="overflow-hidden  sm:pb-1 md:pb-1"
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                rotationInterval={4000}
+              />
               web applications that make a difference."
             </p>
 
@@ -518,7 +521,7 @@ function App() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
           </div>
-         
+
           <div className="grid lg:grid-cols-2 gap-12 items-center ">
             <div className="space-y-6">
               <div className="relative">
@@ -587,32 +590,61 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-900">
+      <section id="skills" className="py-20 bg-gray-900 overflow-hidden relative h-screen flex justify-center items-center">
+        {/* Fade Start */}
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-gray-900 to-transparent z-20"></div>
+        {/* Fade End */}
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-900 to-transparent z-20"></div>
+
+
+        <style>{`
+@keyframes scroll {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+.scrolling {
+animation: scroll 18s linear infinite;
+}
+.paused {
+animation-play-state: paused;
+}
+`}</style>
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl sm:text-5xl font-bold text-white mb-4">
               Tech <span className="text-blue-400">Stack</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-4"></div>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-base sm:text-lg max-w-xl sm:max-w-2xl mx-auto">
               Technologies and tools I use to bring ideas to life
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="group bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-blue-500/50 transition-all duration-300 text-center hover:scale-105 hover:bg-gray-800"
-              >
-                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                  {skill.icon}
+
+          {/* Auto-Scroll Wrapper */}
+          <div className="relative w-full  group">
+            <div
+              className={cn(
+                "flex gap-8 w-max scrolling",
+                "group-hover:paused"
+              )}
+            >
+              {[...skills, ...skills].map((skill, index) => (
+                <div
+                  key={index}
+                  className="min-w-[150px] sm:min-w-[180px] md:min-w-[200px] bg-gray-800/40 p-6 rounded-xl backdrop-blur-xl border border-gray-700 hover:border-blue-500/60 transition-all duration-300 hover:scale-[1.08] shadow-[0_0_15px_rgba(0,0,0,0.4)] hover:shadow-[0_0_20px_rgba(56,189,248,0.25)]"
+                >
+                  <div className="text-4xl mb-4 flex justify-center drop-shadow-lg">
+                    {skill.icon}
+                  </div>
+                  <h3 className="font-semibold text-white text-center text-base sm:text-lg tracking-wide">
+                    {skill.name}
+                  </h3>
                 </div>
-                <h3 className="font-medium text-white group-hover:text-blue-400 transition-colors duration-300">
-                  {skill.name}
-                </h3>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
